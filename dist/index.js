@@ -527,7 +527,7 @@ function run() {
     const matchingLabel = match.findMatching(labelNames, allowedLabels)
     core.setOutput('match', matchingLabel)
   } catch (error) {
-    core.setFailed(error.message)
+    core.setFailed(error.message + `allowedLabels original: ${allowedLabels}`)
   }
 }
 
