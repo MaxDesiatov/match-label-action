@@ -10,8 +10,12 @@ function parseAllowed(allowed) {
 }
 
 function findMatching(labelNames, allowedLabels) {
+  allowedLabels.forEach(allowedLabel => console.log(`allowedLabel.length for ${allowedLabel} is ${allowedLabel.length}`))
   const allowedLabelsSet = new Set(allowedLabels)
-  const matchingLabels = labelNames.filter(labelName => allowedLabelsSet.has(labelName))
+  const matchingLabels = labelNames.filter(labelName => {
+    console.log(`labelName.length for ${labelName} is ${labelName.length}`)
+    return allowedLabelsSet.has(labelName)
+  })
   if (matchingLabels.length < 1) {
     throw new Error(
       `Could not find one of the appropriate labels on the PR. 
