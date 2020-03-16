@@ -10720,9 +10720,9 @@ function findMatching(labelNames, allowedLabels) {
   if (matchingLabels.length < 1) {
     throw new Error(
       `Could not find one of the appropriate labels on the PR. 
-      Allowed labels: ${allowedLabels}
-      Present labels: ${labelNames}
-      Matching labels: ${matchingLabels}`)
+      Allowed labels: length ${allowedLabels.length}, ${allowedLabels}
+      Present labels: length ${labelNames.length}, ${labelNames}
+      Matching labels: length ${matchingLabels.length}, ${matchingLabels}`)
   }
   return matchingLabels[0]
 }
