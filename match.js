@@ -16,7 +16,8 @@ function findMatching(labelNames, allowedLabels) {
     throw new Error(
       `Could not find one of the appropriate labels on the PR. 
       Allowed labels: ${allowedLabels}
-      Present labels: ${labelNames}`)
+      Present labels: ${labelNames}
+      Matching labels: ${matchingLabels}`)
   }
   return matchingLabels[0]
 }
